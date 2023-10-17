@@ -19,14 +19,18 @@ const customFetch = async (url, { body, ...customConfig }) => {
 	try {
 		const response = await fetch(url, config);
 		const data = await response.json();
-		if (data.success) {
-			return { data: data.data, message: data.message, success: true };
+		if (data?.success || data.length > 0) {
+			return {
+				data: data.data || data,
+				message: data?.message || "Data Fetched Successfully 🔥",
+				success: true,
+			};
 		} else {
-			return { data: null, message: data.message, success: false };
+			return { data: null, message: data?.message, success: false };
 		}
 	} catch (error) {
 		console.log(error);
-		return { data: null, message: error.message, success: false };
+		return { data: null, message: error?.message, success: false };
 	}
 };
 

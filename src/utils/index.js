@@ -1,4 +1,4 @@
-export const API_ROOT = `${import.meta.env.CLIENT_DOMAIN}/api/v1`;
+export const API_ROOT = `${import.meta.env.VITE_SERVER_DOMAIN}/api/v1`;
 
 export const API_URLS = {
 	login: () => `${API_ROOT}/users/create_session`,
@@ -28,4 +28,6 @@ export const API_URLS = {
 	searchUsers: (searchText) => `${API_ROOT}/users/search?text=${searchText}`,
 };
 
-export const LOCALSTORAGE_TOKEN_KEY = `token`;
+export const LOCALSTORAGE_TOKEN_KEY = `${
+	import.meta.env.VITE_LOCALSTORAGE_TOKEN_KEY
+}`;
