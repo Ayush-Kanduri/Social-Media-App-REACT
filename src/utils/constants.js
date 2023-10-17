@@ -4,7 +4,7 @@ export const API_URLS = {
 	login: () => `${API_ROOT}/users/create_session`,
 	logout: () => `${API_ROOT}/users/destroy_session`,
 	signup: () => `${API_ROOT}/users/create_user`,
-	getPosts: (page, limit) => `${API_ROOT}/posts?page=${page}&limit=${limit}`,
+	getPosts: (page, limit) => `${API_ROOT}/posts?_page=${page}&_limit=${limit}`,
 	createPost: (content) => `${API_ROOT}/posts/create_post`,
 	getPost: (postId) => `${API_ROOT}/posts?post_id=${postId}`,
 	updatePost: (postId) => `${API_ROOT}/posts?post_id=${postId}`,
