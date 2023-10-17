@@ -1,4 +1,5 @@
 import { getPosts } from "@/api";
+import { Home } from "@/pages";
 import { useEffect } from "react";
 
 function App() {
@@ -9,7 +10,11 @@ function App() {
 		};
 		fetchPosts();
 	}, []);
-	return <div className="bg-black h-screen w-screen"></div>;
+	return (
+		<div className="bg-black h-screen w-screen text-white">
+			<Home />
+		</div>
+	);
 }
 
 export default App;
